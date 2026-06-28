@@ -14,7 +14,7 @@ PORT_TO_SERVICE = {
     53: "domain",
     79: "finger",
     80: "http",
-    88: "kerberos",  # not in original NSL-KDD but common today
+    88: "kerberos",
     109: "pop_2",
     110: "pop_3",
     111: "sunrpc",
@@ -27,8 +27,7 @@ PORT_TO_SERVICE = {
     179: "bgp",
     194: "irc",
     389: "ldap",
-    443: "http",       # https treated as http in classic NSL-KDD
-    443: "http_443",   # alt label some NSL-KDD versions use
+    443: "http_443",
     513: "login",
     514: "shell",
     515: "printer",
@@ -52,11 +51,11 @@ def get_service(port: int, protocol: str = "tcp") -> str:
     Falls back to 'private' for unrecognized high ports (>= 1024),
     or 'other' for unrecognized low/reserved ports.
     """
-    if port in PORT_TO_SERVICE:
-        return PORT_TO_SERVICE[port]
-
     if protocol == "icmp":
         return "eco_i"  # most common ICMP echo request label in NSL-KDD
+
+    if port in PORT_TO_SERVICE:
+        return PORT_TO_SERVICE[port]
 
     if port >= 1024:
         return "private"
