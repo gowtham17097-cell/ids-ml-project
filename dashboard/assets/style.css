@@ -1,0 +1,252 @@
+/* ── IDS Dashboard — Deep Dark Theme ────────────────────── */
+
+[data-testid="stAppViewContainer"] {
+    background-color: #010306;
+    color: #7ab0d8;
+}
+[data-testid="stSidebar"] {
+    background-color: #040a14;
+    border-right: 1px solid #0d2040;
+}
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p {
+    color: #2a5080;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+}
+.block-container { padding: 1rem 1.5rem; }
+h1, h2, h3 { color: #00ddff !important; text-shadow: 0 0 12px #00ddff88; }
+footer { visibility: hidden; }
+#MainMenu { visibility: hidden; }
+[data-testid="stDecoration"] { display: none; }
+
+/* scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #010306; }
+::-webkit-scrollbar-thumb { background: #0d2040; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #1a3a6e; }
+
+/* ── KPI Cards ── */
+.kpi-card {
+    background: #060d1c;
+    border: 1px solid #0d2040;
+    border-radius: 10px;
+    padding: 14px 10px;
+    text-align: center;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+}
+.kpi-card:hover {
+    background: #091220;
+    border-color: #1a3a6e;
+}
+.kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent, #00ddff88), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.kpi-card:hover::before { opacity: 1; }
+
+.kpi-value {
+    font-size: 1.7rem;
+    font-weight: 800;
+    font-family: monospace;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 4px 0;
+}
+.kpi-label {
+    font-size: 0.58rem;
+    color: #2a5080;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-top: 5px;
+}
+.kpi-note {
+    font-size: 0.56rem;
+    color: #2a5080;
+    margin-top: 2px;
+    opacity: 0.7;
+}
+
+.kpi-red    { color: #ff4444; text-shadow: 0 0 16px #ff444488; }
+.kpi-green  { color: #22ee66; text-shadow: 0 0 16px #22ee6688; }
+.kpi-blue   { color: #4488ff; text-shadow: 0 0 16px #4488ff88; }
+.kpi-amber  { color: #ffaa22; text-shadow: 0 0 16px #ffaa2288; }
+.kpi-cyan   { color: #00ddff; text-shadow: 0 0 16px #00ddff88; }
+.kpi-purple { color: #aa55ff; text-shadow: 0 0 16px #aa55ff88; }
+
+/* ── Section Label ── */
+.sec-label {
+    font-size: 0.59rem;
+    font-weight: 700;
+    color: #2a5080;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-left: 2px solid #00ddff;
+    box-shadow: -2px 0 8px #00ddff66;
+    padding-left: 7px;
+    margin-bottom: 10px;
+}
+
+/* ── Threat Bar ── */
+.threat-wrap {
+    background: #060d1c;
+    border: 1px solid #0d2040;
+    border-radius: 10px;
+    padding: 12px 16px;
+}
+.threat-track {
+    background: #0a1828;
+    border-radius: 3px;
+    height: 5px;
+    margin: 6px 0 3px;
+    overflow: hidden;
+}
+.threat-low  { background: linear-gradient(90deg,#22ee6666,#22ee66); border-radius:3px; height:100%; box-shadow:0 0 10px #22ee6688; }
+.threat-mid  { background: linear-gradient(90deg,#ffaa2266,#ffaa22); border-radius:3px; height:100%; box-shadow:0 0 10px #ffaa2288; }
+.threat-high { background: linear-gradient(90deg,#ff444466,#ff4444); border-radius:3px; height:100%; box-shadow:0 0 10px #ff444488; }
+
+/* ── Alert rows ── */
+.alert-atk {
+    background: #1c060622;
+    border-left: 2px solid #ff444466;
+    padding: 5px 8px;
+    margin-bottom: 3px;
+    border-radius: 0 5px 5px 0;
+    font-family: 'JetBrains Mono','Fira Code','Courier New',monospace;
+    font-size: 0.7rem;
+    color: #7ab0d8;
+    transition: background 0.15s;
+}
+.alert-atk:hover { background: #1c060644; }
+
+.alert-ok {
+    border-left: 2px solid #22ee6633;
+    padding: 5px 8px;
+    margin-bottom: 3px;
+    border-radius: 0 5px 5px 0;
+    font-family: 'JetBrains Mono','Fira Code','Courier New',monospace;
+    font-size: 0.7rem;
+    color: #7ab0d8;
+    opacity: 0.5;
+}
+
+.alert-acked { opacity: 0.3 !important; }
+
+/* ── Severity Badges ── */
+.badge-crit { background:#200808; border:1px solid #6b1818; color:#ff4444; font-size:0.56rem; font-weight:800; padding:1px 5px; border-radius:3px; font-family:monospace; text-shadow:0 0 8px #ff4444; }
+.badge-high { background:#1c0e04; border:1px solid #7a3008; color:#ff8822; font-size:0.56rem; font-weight:800; padding:1px 5px; border-radius:3px; font-family:monospace; text-shadow:0 0 8px #ff8822; }
+.badge-med  { background:#141200; border:1px solid #6b5c00; color:#ddcc00; font-size:0.56rem; font-weight:800; padding:1px 5px; border-radius:3px; font-family:monospace; text-shadow:0 0 8px #ddcc00; }
+.badge-info { background:#04101e; border:1px solid #1a3a6e; color:#4488ff; font-size:0.56rem; font-weight:800; padding:1px 5px; border-radius:3px; font-family:monospace; text-shadow:0 0 8px #4488ff; }
+
+/* ── Cards ── */
+.ids-card {
+    background: #060d1c;
+    border: 1px solid #0d2040;
+    border-radius: 10px;
+    padding: 16px;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+.ids-card:hover {
+    border-color: #1a3a6e;
+    box-shadow: 0 0 20px #00ddff14;
+}
+
+/* ── Status dots ── */
+.dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 6px;
+    flex-shrink: 0;
+}
+.dot-green  { background:#22ee66; box-shadow:0 0 8px #22ee66, 0 0 16px #22ee6644; }
+.dot-cyan   { background:#00ddff; box-shadow:0 0 8px #00ddff, 0 0 16px #00ddff44; }
+.dot-red    { background:#ff4444; box-shadow:0 0 8px #ff4444, 0 0 16px #ff444444; }
+.dot-muted  { background:#2a5080; }
+
+/* ── Tip rows ── */
+.tip-row { display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid #0d2040; }
+.tip-key { font-size:0.62rem; color:#2a5080; }
+.tip-val { font-size:0.62rem; color:#00ddff; font-family:monospace; font-weight:600; }
+
+/* ── Mini bar ── */
+.mini-track { background:#0a1828; border-radius:2px; height:3px; margin-top:4px; }
+.mini-fill-red    { background:#ff444480; border-radius:2px; height:100%; box-shadow:0 0 4px #ff444444; }
+.mini-fill-amber  { background:#ffaa2280; border-radius:2px; height:100%; box-shadow:0 0 4px #ffaa2244; }
+.mini-fill-purple { background:#aa55ff80; border-radius:2px; height:100%; box-shadow:0 0 4px #aa55ff44; }
+
+/* ── IP rows ── */
+.ip-row { display:flex; align-items:center; gap:8px; padding:5px 0; border-bottom:1px solid #0d2040; }
+.port-row { padding:5px 0; border-bottom:1px solid #0d2040; }
+.atk-row  { padding:5px 0; border-bottom:1px solid #0d2040; }
+
+/* ── Unacked badge ── */
+.unacked-badge {
+    display: inline-block;
+    background: #1c060688;
+    border: 1px solid #ff444466;
+    border-radius: 5px;
+    padding: 3px 10px;
+    font-size: 0.62rem;
+    font-family: monospace;
+    font-weight: 700;
+    color: #ff4444;
+    text-shadow: 0 0 10px #ff4444;
+    box-shadow: 0 0 12px #ff444440;
+}
+.nominal-badge {
+    display: inline-block;
+    background: #040a14;
+    border: 1px solid #1a3a6e;
+    border-radius: 5px;
+    padding: 3px 10px;
+    font-size: 0.62rem;
+    font-family: monospace;
+    font-weight: 700;
+    color: #2a5080;
+}
+
+/* ── Streamlit overrides ── */
+.stButton button {
+    background: #0a1828 !important;
+    border: 1px solid #1a3a6e !important;
+    color: #2a5080 !important;
+    font-family: monospace !important;
+    font-size: 0.65rem !important;
+    border-radius: 4px !important;
+    padding: 2px 8px !important;
+    transition: all 0.2s !important;
+}
+.stButton button:hover {
+    border-color: #ff4444 !important;
+    color: #ff4444 !important;
+    box-shadow: 0 0 8px #ff444440 !important;
+}
+.stTabs [data-baseweb="tab"] {
+    background: transparent !important;
+    color: #2a5080 !important;
+    font-size: 0.65rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+}
+.stTabs [aria-selected="true"] {
+    color: #00ddff !important;
+    text-shadow: 0 0 8px #00ddff !important;
+    border-bottom: 2px solid #00ddff !important;
+}
+.stTabs [data-baseweb="tab-list"] {
+    background: #040a14 !important;
+    border-bottom: 1px solid #0d2040 !important;
+}
+.stToggle { color: #7ab0d8 !important; }
+.stRadio label { color: #2a5080 !important; font-size: 0.72rem !important; }
+.stCheckbox label { color: #2a5080 !important; font-size: 0.72rem !important; }
+div[data-testid="metric-container"] { display: none; }

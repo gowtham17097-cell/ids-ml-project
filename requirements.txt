@@ -1,0 +1,21 @@
+# Core ML
+scikit-learn
+pandas
+numpy
+
+# Visualization
+matplotlib
+seaborn
+plotly
+
+# Notebook
+jupyter
+
+# Dashboard
+streamlit
+
+# Network capture
+scapy
+
+# Config
+pyyaml

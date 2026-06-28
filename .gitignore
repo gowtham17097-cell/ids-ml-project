@@ -1,0 +1,43 @@
+# Virtual environment
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Trained model (retrain from notebooks)
+src/models/saved/rf_model.pkl
+src/models/saved/*.pkl
+src/models/saved/*.h5
+
+# Logs (contain real IP addresses)
+logs/alerts.csv
+logs/acked.txt
+
+# Scratch / temp files
+scratch.py
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Dataset (too large for GitHub)
+data/datasets/KDDTrain+.csv
+data/datasets/KDDTest+.csv
+data/datasets/*.csv
+data/raw/*.pcap
+data/processed/features.csv
